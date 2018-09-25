@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-hant">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<title>警示系統</title>
+<meta name="description" content="警示看板系統">
+
+<link rel="stylesheet" type="text/css" href="./assets/board.css">
+
+<script type="text/javascript" src="./assets/stimulus.umd.js"></script>
+<script type="text/javascript" src="./assets/board.js"></script>
+
+</head>
+
+
+<body>
+
+<div class="board">
+
+	<div class="group" data-controller="group">
+		<div class="group-title" data-target="group.title">防空警報</div>
+		<div class="group-buttons">
+			<div data-target="group.button" data-action="click->group#toggle">
+				緊急
+			</div>
+			<div data-target="group.button" data-action="click->group#toggle">
+				解除
+			</div>
+		</div>
+	</div>
+
+	<div class="group" data-controller="group">
+		<div class="group-title" data-target="group.title">戰備階段</div>
+		<div class="group-buttons">
+			<div data-target="group.button" data-action="click->group#toggle">
+				防衛作戰時期<br>全面作戰階段
+			</div>
+			<div data-target="group.button" data-action="click->group#toggle">
+				防衛作戰時期<br>應急作戰階段
+			</div>
+			<div data-target="group.button" data-action="click->group#toggle">
+				經常戰備時期<br>戰備整備階段
+			</div>
+		</div>
+	</div>
+
+	<div class="group" data-controller="group">
+		<div class="group-title" data-target="group.title">戰備姿態</div>
+		<div class="group-buttons">
+			<div data-target="group.button" data-action="click->group#toggle">
+				戰鬥姿態
+			</div>
+			<div data-target="group.button" data-action="click->group#toggle">
+				警戒姿態
+			</div>
+			<div data-target="group.button" data-action="click->group#toggle">
+				待命姿態
+			</div>
+		</div>
+	</div>
+
+	<div class="group" data-controller="group">
+		<div class="group-title" data-target="group.title">射擊管制狀態</div>
+		<div class="group-buttons">
+			<div data-target="group.button" data-action="click->group#toggle">
+				准許射擊
+			</div>
+			<div data-target="group.button" data-action="click->group#toggle">
+				相機射擊
+			</div>
+			<div data-target="group.button" data-action="click->group#toggle">
+				暫停射擊
+			</div>
+		</div>
+	</div>
+
+</div>
+
+</body>
+
+</html>
