@@ -7,14 +7,18 @@ class ButtonGroup extends Stimulus.Controller {
 	}
 
 	toggle(event) {
-		this.titleTarget.classList.add('enabled')
 		this.buttonTargets.forEach(e => {
 			if (e === event.target) {
-				e.classList.add('enabled')
+				e.classList.toggle('enabled')
 			} else {
 				e.classList.remove('enabled')
 			}
 		})
+		if (event.target.classList.contains('enabled')) {
+			this.titleTarget.classList.add('enabled')
+		} else {
+			this.titleTarget.classList.remove('enabled')
+		}
 	}
 }
 
