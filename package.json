@@ -9,6 +9,8 @@
   },
   "author": "Tzu-ping Chung <uranusjr@gmail.com> (https://uranusjr.com)",
   "dependencies": {
+    "parcel-bundler": "^1.10.1",
+    "stimulus": "^1.1.0"
   },
   "main": "src/index.html",
   "window": {
@@ -16,6 +18,11 @@
   },
   "scripts": {
     "app": "nwjs .",
+    "dev": "parcel watch src/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0"
   }
 }

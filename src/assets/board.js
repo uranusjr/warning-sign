@@ -1,6 +1,7 @@
-const application = Stimulus.Application.start()
+import {Application, Controller} from 'stimulus'
 
-class ButtonGroup extends Stimulus.Controller {
+
+class ButtonGroup extends Controller {
 
 	static get targets() {
 		return ['button']
@@ -17,6 +18,7 @@ class ButtonGroup extends Stimulus.Controller {
 	}
 }
 
+const application = Application.start()
 application.register('group', ButtonGroup)
 
 
