@@ -3,7 +3,7 @@ const application = Stimulus.Application.start()
 class ButtonGroup extends Stimulus.Controller {
 
 	static get targets() {
-		return ['button', 'title']
+		return ['button']
 	}
 
 	toggle(event) {
@@ -14,11 +14,6 @@ class ButtonGroup extends Stimulus.Controller {
 				e.classList.remove('enabled')
 			}
 		})
-		if (event.target.classList.contains('enabled')) {
-			this.titleTarget.classList.add('enabled')
-		} else {
-			this.titleTarget.classList.remove('enabled')
-		}
 	}
 }
 
