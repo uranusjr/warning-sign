@@ -1,0 +1,21 @@
+{
+  "name": "warning-sign",
+  "version": "1.0.0",
+  "description": "Warning sign.",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uranusjr/warning-sign.git"
+  },
+  "author": "Tzu-ping Chung <uranusjr@gmail.com> (https://uranusjr.com)",
+  "dependencies": {
+  },
+  "main": "src/index.html",
+  "window": {
+    "fullscreen": true
+  },
+  "scripts": {
+    "app": "nwjs .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
