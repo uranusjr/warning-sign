@@ -36,17 +36,16 @@ body {
   color: #aaa;
 }
 
-.board .enabled {
+.board .enabled, .board .group-buttons > .enabled {
   background: #fff;
-  color: #333;
+  color: #111;
 }
 
 .board .group-buttons > .enabled {
-  background: #fff;
-  color: #ff0;
+  background: #ff0;
 }
 .board .group-buttons > .enabled:first-child {
-  color: #f00;
+  background: #f33;
 }
 
 .board .group-title {
