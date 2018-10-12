@@ -20,6 +20,7 @@ body {
 .board .group {
   display: flex;
   flex-direction: row;
+  font-weight: bold;
 }
 
 .board .group-title, .board .group-buttons > div {
@@ -36,10 +37,6 @@ body {
 .board .enabled, .board .group-buttons > .enabled {
   background: #fff;
   color: #333;
-}
-
-.group-buttons > .enabled {
-  font-weight: bold;
 }
 
 .board .group-title {
