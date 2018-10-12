@@ -34,9 +34,17 @@ body {
   color: #aaa;
 }
 
-.board .enabled, .board .group-buttons > .enabled {
+.board .enabled {
   background: #fff;
   color: #333;
+}
+
+.board .group-buttons > .enabled {
+  background: #fff;
+  color: #ff0;
+}
+.board .group-buttons > .enabled:first-child {
+  color: #f00;
 }
 
 .board .group-title {
