@@ -22,10 +22,15 @@ application.register('group', ButtonGroup)
 
 // Scale content to screen.
 function resize() {
+	const windowW = window.innerWidth - 64
+	const windowH = window.innerHeight - 64
+
+	// Fix height, scale width to fit.
 	const board = document.querySelector('.board')
-	const xs = (window.innerWidth - 64) / board.offsetWidth
-	const ys = (window.innerHeight - 64) / board.offsetHeight
-	board.style['transform'] = `translate(0, -50%) scale(${Math.min(xs, ys)})`
+	const boardHeight = windowH / windowW * board.scrollWidth
+	const boardScale = windowW / board.scrollWidth
+	board.style['height'] = `${boardHeight}px`
+	board.style['transform'] = `translate(-50%, -50%) scale(${boardScale})`
 }
 document.addEventListener('DOMContentLoaded', resize)
 window.addEventListener('resize', resize)
