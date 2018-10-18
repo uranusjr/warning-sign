@@ -8,7 +8,8 @@ class ButtonGroup extends Stimulus.Controller {
 
 	toggle(event) {
 		this.buttonTargets.forEach(e => {
-			if (e === event.target) {
+			const btn = event.target.closest('div')
+			if (e === btn) {
 				e.classList.toggle('enabled')
 			} else {
 				e.classList.remove('enabled')

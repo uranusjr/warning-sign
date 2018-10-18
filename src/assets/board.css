@@ -34,6 +34,7 @@ body {
   margin-left: -1px;
   background: #ddd;
   color: #aaa;
+  text-align: center;
 }
 
 .board .enabled, .board .group-buttons > .enabled {
@@ -53,6 +54,7 @@ body {
 }
 .board .group-buttons {
   flex: 1;
+  word-break: keep-all;
 }
 
 .board .group-buttons {
