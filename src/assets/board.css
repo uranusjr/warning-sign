@@ -46,7 +46,7 @@ body {
   background: #ff0;
 }
 .board .group-buttons > .enabled:first-child {
-  background: #f33;
+  background: #ff4d4d;
 }
 
 .board .group-title {
