@@ -19,7 +19,7 @@
 
 <body>
 
-<div class="board">
+<div class="board" data-controller="board" data-target="board.element">
 
 	<div class="group" data-controller="group">
 		<div class="group-title enabled">防空警報</div>
@@ -79,6 +79,11 @@
 	</div>
 
 </div>
+
+<form class="size-control" data-controller="settings">
+	<input type="number" name="font-size" value="200" step="10"
+			data-target="settings.input" data-action="input->settings#setBoardSize">
+</form>
 
 </body>
 

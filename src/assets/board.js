@@ -1,3 +1,9 @@
+(function () {
+
+function getBoard() {
+	return document.querySelector('.board')
+}
+
 const application = Stimulus.Application.start()
 
 class ButtonGroup extends Stimulus.Controller {
@@ -18,7 +24,27 @@ class ButtonGroup extends Stimulus.Controller {
 	}
 }
 
+class Settings extends Stimulus.Controller {
+
+	static get targets() {
+		return ['input']
+	}
+
+	_setBoardSize(value) {
+		getBoard().style['font-size'] = `${value}%`
+	}
+
+	setBoardSize(event) {
+		this._setBoardSize(event.target.value)
+	}
+
+	connect() {
+		this._setBoardSize(this.inputTarget.value)
+	}
+}
+
 application.register('group', ButtonGroup)
+application.register('settings', Settings)
 
 
 // Scale content to screen.
@@ -27,7 +53,7 @@ function resize() {
 	const windowH = window.innerHeight - 64
 
 	// Fix height, scale width to fit.
-	const board = document.querySelector('.board')
+	const board = getBoard()
 	const boardHeight = windowH / windowW * board.scrollWidth
 	const boardScale = windowW / board.scrollWidth
 	board.style['height'] = `${boardHeight}px`
@@ -35,3 +61,5 @@ function resize() {
 }
 document.addEventListener('DOMContentLoaded', resize)
 window.addEventListener('resize', resize)
+
+})()
