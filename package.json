@@ -1,0 +1,13 @@
+{
+  "name": "warning-sign",
+  "version": "1.0.0",
+  "description": "Personal Project, do not use.",
+  "main": "src/index.html",
+  "window": {
+    "title": "警示",
+    "toolbar": false,
+    "min_width": 800,
+    "min_height": 600,
+    "fullscreen": true
+  }
+}
