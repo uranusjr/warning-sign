@@ -43,7 +43,7 @@ body {
 }
 
 .board .group-buttons > .enabled {
-  background: #ff0;
+  background: #fee202;
 }
 .board .group-buttons > .enabled:first-child {
   background: #ff4d4d;
