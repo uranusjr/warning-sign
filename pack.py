@@ -43,7 +43,7 @@ def build_package(workdir: pathlib.Path) -> pathlib.Path:
     return target
 
 
-def build_dist(
+def collect_dist(
         workdir: pathlib.Path, nw_js_zip: pathlib.Path,
         package: pathlib.Path) -> pathlib.Path:
     print("Building dist...")
@@ -74,8 +74,10 @@ def build_dist(
     # Remove nw.exe.
     nw_exe.unlink()
 
-    # Replace the dist directory.
-    print(f"  {rootdir} -> {DIST_DIR}")
+    return rootdir
+
+
+def archive_dist(rootdir: pathlib.Path):
     if DIST_DIR.exists():
         shutil.rmtree(DIST_DIR)
     DIST_DIR.mkdir()
@@ -96,7 +98,8 @@ def main():
         workdir = pathlib.Path(tempdir)
         nw_js_zip = get_nw_js_zip(workdir)
         package = build_package(workdir)
-        dist = build_dist(workdir, nw_js_zip, package)
+        distdir = collect_dist(workdir, nw_js_zip, package)
+        dist = archive_dist(distdir)
     print(f"\nCreated\n  {dist}")
 
 
