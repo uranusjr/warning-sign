@@ -1,5 +1,6 @@
 {
   "name": "warning-sign",
+  "private": true,
   "version": "1.0.0",
   "description": "Personal Project, do not use.",
   "main": "src/index.html",
