@@ -2,6 +2,7 @@ import os
 import pathlib
 import shutil
 import tempfile
+import typing
 import urllib.request
 import zipfile
 
@@ -13,6 +14,9 @@ DIST_DIR: pathlib.Path = ROOT_DIR.joinpath("dist")
 
 TARGET_NAME: str = "warning-sign"
 
+BLACKLIST_ROOT_DIRS: typing.Set[str] = {".git", ".vscode", "dist"}
+BLACKLIST_FILES: typing.Set[str] = {".gitignore", ".gitattributes", "pack.py"}
+
 
 def get_nw_js_zip(workdir: pathlib.Path) -> pathlib.Path:
     print("Downloading nw.js distribution...")
@@ -22,8 +26,8 @@ def get_nw_js_zip(workdir: pathlib.Path) -> pathlib.Path:
     return target
 
 
-def _clean_dirnames_for_root(dirnames: list):
-    indexes = [i for i, v in enumerate(dirnames) if v in {".git", "dist"}]
+def _clean_dirnames_for_root(dirnames: typing.List[str]):
+    indexes = [i for i, v in enumerate(dirnames) if v in BLACKLIST_ROOT_DIRS]
     for i in reversed(indexes):
         dirnames.pop(i)
 
@@ -37,6 +41,8 @@ def build_package(workdir: pathlib.Path) -> pathlib.Path:
             if os.path.samefile(dirname, ROOT_DIR):
                 _clean_dirnames_for_root(dirnames)
             for fn in filenames:
+                if fn in BLACKLIST_FILES:
+                    continue
                 arcname = os.path.join(os.path.relpath(dirname, ROOT_DIR), fn)
                 print(f"    {arcname}")
                 zf.write(os.path.join(dirname, fn), arcname)
@@ -96,10 +102,11 @@ def archive_dist(rootdir: pathlib.Path):
 def main():
     with tempfile.TemporaryDirectory() as tempdir:
         workdir = pathlib.Path(tempdir)
-        nw_js_zip = get_nw_js_zip(workdir)
-        package = build_package(workdir)
-        distdir = collect_dist(workdir, nw_js_zip, package)
-        dist = archive_dist(distdir)
+        dist = archive_dist(collect_dist(
+            workdir,
+            get_nw_js_zip(workdir),
+            build_package(workdir),
+        ))
     print(f"\nCreated\n  {dist}")
 
 
