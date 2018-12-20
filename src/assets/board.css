@@ -49,6 +49,9 @@ body {
 .board .group-buttons > .enabled:first-child {
   background: #ff4d4d;
 }
+.board .group-buttons > .enabled:last-child {
+  background: #00ff44;
+}
 
 .board .group-title {
   flex: 0 1px;

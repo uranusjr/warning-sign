@@ -15,6 +15,9 @@ Personal Project, do not use.
 .board .group-buttons > .enabled:first-child {
   background: 紅色;
 }
+.board .group-buttons > .enabled:last-child {
+  background: 綠色;
+}
 ```
 
 顏色是用 hex 色碼，可以用這個工具來看：https://color.adobe.com/
