@@ -26,8 +26,13 @@ body {
   font-size: 100%;
 }
 
-.board .group-title > div {
-  height: calc(50% - 4rem);
+.board .group-title.char-6 {
+  /* 6 chars + 5 spacing = 800%. */
+  line-height: 140%;
+}
+.board .group-title.char-4 {
+  /* 4 chars + 3 spacing = 800%. */
+  line-height: 233.3333%;
 }
 
 .board .group-title, .board .group-buttons > div {
