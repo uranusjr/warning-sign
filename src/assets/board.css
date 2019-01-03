@@ -26,6 +26,10 @@ body {
   font-size: 100%;
 }
 
+.board .group-title > div {
+  height: calc(50% - 4rem);
+}
+
 .board .group-title, .board .group-buttons > div {
   display: flex;
   align-items: center;
