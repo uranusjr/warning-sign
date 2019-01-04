@@ -6,7 +6,7 @@ html, body {
 }
 body {
   display: flex;
-  font-family: sans-serif;
+  font-family: '標楷體', 'DFkai-SB', sans-serif;
 }
 
 .board {
@@ -23,7 +23,7 @@ body {
   display: flex;
   flex-direction: row;
   font-weight: bold;
-  font-size: 100%;
+  font-size: 300%;
 }
 
 .board .group-title.char-6 {
@@ -57,9 +57,11 @@ body {
 }
 .board .group-buttons > .enabled:first-child {
   background: #8b0000;
+  color: #fff;
 }
 .board .group-buttons > .enabled:last-child {
   background: #228b00;
+  color: #fff;
 }
 
 .board .group-title {
