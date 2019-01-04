@@ -36,6 +36,7 @@ body {
 }
 
 .board .group-title, .board .group-buttons > div {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -83,6 +84,17 @@ body {
 }
 .board .group-buttons > div:not(:first-child) {
   margin-top: -1px;
+}
+
+.board .group-buttons > div > * {
+  pointer-events: none;
+}
+
+.board .group-buttons > div .desc {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  font-size: 50%;
 }
 
 
